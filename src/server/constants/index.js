@@ -10,7 +10,7 @@ module.exports = {
     signal: {
         bufferSize: 256,
         sampleRate: 250,
-        windowSize: 32 // data has a moving window of 32 samples = 128 milliseconds (250Hz)
+        windowSize: 8 // data has a moving window of 32 samples = 128 milliseconds (250Hz)
     },
     fft: {
         bins: 256

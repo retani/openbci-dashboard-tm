@@ -7,6 +7,11 @@ const Connectors = require('./connectors');
 const Providers = require('./providers');
 const Modules = require('./modules'); 
 
+const Emitters = require('./emitters')
+
+const Osc = new Emitters.Osc()
+Osc.setup()
+
 const Connector = new Connectors.Serialport({
     verbose: true
 });
@@ -15,7 +20,7 @@ const Signal = new Providers.Signal({ io });
 const Motion = new Providers.Motion({ io });
 
 Connector.start().then(() => {
-    const FFT = new Modules.FFT({ Signal });
+    const FFT = new Modules.FFT({ Signal, Osc });
     const Topo = new Modules.Topo({ Signal });
     const TimeSeries = new Modules.TimeSeries({ Signal });
 });

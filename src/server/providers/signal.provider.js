@@ -26,6 +26,8 @@ module.exports = class Signal {
             });
         });
         
+        Utils.stats.init('sample')
+        Utils.stats.init('signal')
         this.setScale();
     }
     
@@ -34,13 +36,15 @@ module.exports = class Signal {
         this.add(sample);
        
         if (this.sampleNumber === this.bufferSize) {
+            Utils.stats.update('signal')
             this.emitter.emit(constants.events.signal, [...this.signals]);
             this.window();
         }
     }
     
     add (sample) {
-        console.log('sample', sample);
+        //console.log('sample', sample);
+        Utils.stats.update('sample')
         Object.keys(sample.channelData).forEach((channel, i) => {
             this.signals[i].push(sample.channelData[channel]);
         });

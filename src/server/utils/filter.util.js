@@ -5,13 +5,13 @@ var Fili = require('fili');
 module.exports = {
     
     state: {
-        BANDPASS: '1-50',
-        NOTCH: '60',
+        BANDPASS: '1-45',
+        NOTCH: '50',
         VERTSCALE: '50',
         VERTALGO: 'LOG',
         SMOOTH: '0-75',
         POLARITY: 'YES',
-        MAXFREQUENCY: '60'
+        MAXFREQUENCY: '50'
     },    
     
     apply (filter) {

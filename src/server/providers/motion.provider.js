@@ -17,7 +17,7 @@ module.exports = class Motion {
             this.simulate();
         } else {
             if (this.hasMotion(auxData)) {
-                this.auxData = this.amplify(auxData);
+                this.auxData = this.transform(this.amplify(auxData));
                 this.emit();
             }
         }   
@@ -29,8 +29,15 @@ module.exports = class Motion {
     }
     
     amplify (auxData) {
-        return auxData.map(axis => Math.round(axis));
+        //console.log(auxData.map(axis => Math.round(axis*Math.PI)));
+        return auxData.map(axis => axis);
     }
+
+    transform(auxData) {
+        // transform axis
+        return [auxData[1], -auxData[0], -auxData[2]+0.5]
+    }
+
     
     simulate () {
         this.count++;

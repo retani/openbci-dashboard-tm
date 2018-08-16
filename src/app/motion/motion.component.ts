@@ -29,6 +29,7 @@ export class MotionComponent implements OnInit {
     BrainBrowser.config.set('worker_dir', 'vendor/brainbrowser/build/brainbrowser-2.3.0/workers');
     
     this.socket.on(this.constants.socket.events.motion, (data) => {
+      //console.log(data)
       this.rotation = data.data;
       
       if (this.model) {

@@ -6,7 +6,8 @@ const map: any = {
   'smoothie': 'vendor/smoothie/smoothie.js',
   'chartjs': 'vendor/chart.js/dist/Chart.bundle.js',
   'ng2-charts': 'vendor/ng2-charts/bundles/ng2-charts.js',
-  'socket.io-client': 'vendor/socket.io-client/socket.io.js',
+  //'socket.io-client': 'vendor/socket.io-client/socket.io.js',
+  'socket.io-client': 'https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js',
   'chroma-js': 'vendor/chroma-js/chroma.js',
   'plotly': 'vendor/plotly.js/dist/plotly.js',
   'brainbrowser': 'vendor/brainbrowser/build/brainbrowser-2.3.0/brainbrowser.surface-viewer.min.js'

@@ -22,12 +22,12 @@ export class Constants {
       enabled: true,
       options: [
         {
-          id: 'NOTCH:60',
-          label: '60 Hz'
-        },
-        {
           id: 'NOTCH:50',
           label: '50 Hz'
+        },        
+        {
+          id: 'NOTCH:60',
+          label: '60 Hz'
         },
         {
           id: 'NOTCH:NONE',
